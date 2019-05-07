@@ -50,7 +50,8 @@ int main()
 		assert(*raw_ptr == bound);
 		raw_results[i] = duration;
 	}
-
+	std::cout << "Raw recursion depth: " << bound << std::endl;
+	std::cout << "Raw test repetitions: " << iterations << std::endl;
 	std::cout << "Raw results (in nanoseconds):" << std::endl;
 	print_stats(raw_results);
 
@@ -65,6 +66,8 @@ int main()
 		sp_results[i] = duration;
 	}
 
+	std::cout << "SP recursion depth: " << bound << std::endl;
+	std::cout << "SP test repetitions: " << iterations << std::endl;
 	std::cout << "SP results (in nanoseconds):" << std::endl;
 	print_stats(sp_results);
 }
