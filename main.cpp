@@ -6,7 +6,7 @@
 #include <chrono>
 #include <assert.h>
 
-void raw_recursive_increment(int* out, uint bound) {
+void raw_recursive_increment(uint* out, uint bound) {
 	if (*out >= bound) {
 		return;
 	} else {
@@ -15,7 +15,7 @@ void raw_recursive_increment(int* out, uint bound) {
 	}
 }
 
-void sp_recursive_increment(std::shared_ptr<int> out, uint bound) {
+void sp_recursive_increment(std::shared_ptr<uint> out, uint bound) {
 	if (*out >= bound) {
 		return;
 	} else {
@@ -39,7 +39,7 @@ int main()
 	const uint iterations = 1024;
 	const uint bound = 8192;
 
-	auto raw_ptr = new int();
+	auto raw_ptr = new uint();
 	auto raw_results = std::vector<int64_t>(iterations);
 	for (uint i = 0; i < iterations; i++) {
 		*raw_ptr = 0;
@@ -57,7 +57,7 @@ int main()
 
 	auto sp_results = std::vector<int64_t>(iterations);
 	for (uint i = 0; i < iterations; i++) {
-		auto sp = std::make_shared<int>(0);
+		auto sp = std::make_shared<uint>(0);
 		auto begin = std::chrono::high_resolution_clock::now();
 		sp_recursive_increment(sp, bound);
 		auto end = std::chrono::high_resolution_clock::now();
