@@ -82,7 +82,7 @@ int main()
 		raw_recursive_results[i] = duration;
 	}
 	std::cout << "Raw recursion depth: " << bound << std::endl;
-	std::cout << "Raw test repetitions: " << iterations << std::endl;
+	std::cout << "Raw recursion test repetitions: " << iterations << std::endl;
 	std::cout << "Raw recursive results (in nanoseconds):" << std::endl;
 	print_stats(raw_recursive_results);
 
@@ -119,7 +119,7 @@ int main()
 	}
 
 	std::cout << "SP recursion depth: " << bound << std::endl;
-	std::cout << "SP test repetitions: " << iterations << std::endl;
+	std::cout << "SP recursion test repetitions: " << iterations << std::endl;
 	std::cout << "SP recursive results (in nanoseconds):" << std::endl;
 	print_stats(sp__recursive_results);
 }
