@@ -45,7 +45,7 @@ void print_stats(std::vector<int64_t> v) {
 
 int main()
 {
-	const uint iterations = 8192;
+	const uint iterations = 16384;
 	const uint bound = 8192;
 
 	// test raw pointer iteration
